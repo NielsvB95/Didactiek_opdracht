@@ -5,9 +5,9 @@ using UnityEngine;
 public class LeftRightPlatform : MonoBehaviour
 {
 
-    float platformSpeed = 2f;
-    bool endPoint;
-    GameObject Player; 
+    float platformSpeed = 2f; //plat speed
+    bool endPoint; //endpoint for the platform
+    GameObject Player; //gameobject for the player
 
     private void Start()
     {
@@ -34,15 +34,17 @@ public class LeftRightPlatform : MonoBehaviour
             endPoint = true;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision) //make the player a child if it hits the platform. This will make it able to stay on the platform
+    private void OnCollisionEnter2D(Collision2D collision) 
     {
+        //make the player a child if it hits the platform. This will make it able to stay on the platform
         if (collision.gameObject.tag == "Player")
         {
             Player.transform.parent = transform;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision) //if it leaves the platform maek it normal. This will make it able to leave the platform
+    private void OnCollisionExit2D(Collision2D collision) 
     {
+        //if it leaves the platform maek it normal. This will make it able to leave the platform
         if (collision.gameObject.tag == "Player")
         {
             Player.transform.parent = null;
