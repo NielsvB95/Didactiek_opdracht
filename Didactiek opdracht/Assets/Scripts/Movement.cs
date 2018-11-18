@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         localScale = transform.localScale; //check forthe player facing
+        question = GameObject.FindGameObjectWithTag("Question");
     }
 
     // Update is called once per frame
@@ -114,7 +115,12 @@ public class Movement : MonoBehaviour
             isDead = true;
             anim.SetTrigger("isDead");
         }
-        if (col.gameObject == question)
+        
+    }
+    //right now the way to start a question this does not work the proper way
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Question")
         {
             Debug.Log("question");
             questionManager.Pause();

@@ -52,5 +52,4 @@ public class UpDownPlatform : MonoBehaviour {
             Player.transform.parent = null;
         }
     }
-
 }

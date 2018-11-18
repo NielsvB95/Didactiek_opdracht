@@ -663,6 +663,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &436386047
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4379510737454292, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517940360891958, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+      propertyPath: m_TagString
+      value: Question
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430320336866122, guid: f1f7c4988cfa5334db10f58cf67856e5,
+        type: 2}
+      propertyPath: questionManager
+      value: 
+      objectReference: {fileID: 39720739}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1f7c4988cfa5334db10f58cf67856e5, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &457315082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1455,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &874175904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517940360891958, guid: f1f7c4988cfa5334db10f58cf67856e5,
+    type: 2}
+  m_PrefabInternal: {fileID: 436386047}
 --- !u!1 &883800123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,8 +2614,7 @@ Prefab:
         type: 2}
       propertyPath: question
       value: 
-      objectReference: {fileID: 1517940360891958, guid: f1f7c4988cfa5334db10f58cf67856e5,
-        type: 2}
+      objectReference: {fileID: 874175904}
     - target: {fileID: 114571356422942512, guid: 816a63f85f544b040ac17a3ad2e44af4,
         type: 2}
       propertyPath: questionManager

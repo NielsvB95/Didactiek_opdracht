@@ -31,55 +31,56 @@ public class CameraManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //volgt de huidige speler Y waarde
+        //follow current Y value.
         playerHeightY = player.position.y;
 
         if (playerHeightY > platCheck)
         {
             PlatformManager();
         }
-        //volgt de huidige camera y waarde
+        //follow current camera Y value.
         float currentCameraHeight = transform.position.y;
-        // De manier hoe de hoogte van de camera aanpast
+        // Change the height of the camera
         float newHeightOfCamera = Mathf.Lerp(currentCameraHeight, playerHeightY, Time.deltaTime * 10);
-        //verandert de hoogte van de camera als de hoogte van de speler hoger is dan de camera
+        // Change the height of the camera if the height of the player is higher than the camera
         if (playerHeightY > currentCameraHeight)
         {
-            //de nieuwe camera positie is de huidige X, de nieuwe hoogte van de camera, de huidige Z
+            //the new camera position is the current X, new height of the camera, current Z
             transform.position = new Vector3(transform.position.x, newHeightOfCamera, transform.position.z);
 
-        } else if (playerHeightY < currentCameraHeight - 1)
+        } else if (playerHeightY < currentCameraHeight - 1) // if the player fals down follow the player with the camera
         {
             transform.position = new Vector3(transform.position.x, newHeightOfCamera, transform.position.z);
         }
 
-        OnGui2D.score = (int)Time.timeSinceLevelLoad;
+        OnGui2D.score = (int)Time.timeSinceLevelLoad; // set the score counter
 
     }
 
     void PlatformManager()
     {
+        //check for next platforms it will spawn if the height is 15 higher
         platCheck = player.position.y + 15;
 
-        PlatformSpawner(platCheck + 15, false);
+        PlatformSpawner(platCheck + 15, false);//bool is for the check to spawn a question
     }
 
     void PlatformSpawner(float floatValue, bool question)
     {
-        float y = spawnPlatformsTo;
+        float y = spawnPlatformsTo; //Y value where the platform will spawn
 
         while (y <= floatValue)
         {
-            float x = Random.Range(-3.25f, 3.25f);
+            float x = Random.Range(-3.25f, 3.25f); //X range where the platforms will spawn
 
-            platNumber = Random.Range(1, 5);
+            platNumber = Random.Range(1, 5); // platnumbers which are leftright, regular etc
 
-            Vector2 posXY = new Vector2(x, y);
-            if (posXY.y % 10 == 0)
+            Vector2 posXY = new Vector2(x, y); //position for the platform
+            if (posXY.y % 10 == 0) //every 10 heigt spawn a question
             {
-                platNumber = 5;
+                platNumber = 5; //set platnumber to 5
             }
-            switch (platNumber)
+            switch (platNumber) //switch to randomise the platforms
             {
                 case 1:
                     Instantiate(regular, posXY, Quaternion.identity);
@@ -97,8 +98,8 @@ public class CameraManager : MonoBehaviour {
                     Instantiate(Question, posXY, Quaternion.identity);
                     break;
             }
-            y += 2f;
+            y += 2f; //set the y + 2 for the next platform
         }
-        spawnPlatformsTo = floatValue;
+        spawnPlatformsTo = floatValue; //set the y value for the next platform.
     }
 }
