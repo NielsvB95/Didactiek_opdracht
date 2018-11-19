@@ -11,7 +11,7 @@ public class UpDownPlatform : MonoBehaviour {
     bool position; //check position 
     public int unitsToMove = 2; //set the value of how far the platform can move
     GameObject Player;
-    private void Start()
+    void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player"); //set the player object
         startPoint = transform.position.y; //set the startpoint

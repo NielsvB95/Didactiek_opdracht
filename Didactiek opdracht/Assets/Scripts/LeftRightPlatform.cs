@@ -9,7 +9,7 @@ public class LeftRightPlatform : MonoBehaviour
     bool endPoint; //endpoint for the platform
     GameObject Player; //gameobject for the player
 
-    private void Start()
+    void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -44,7 +44,7 @@ public class LeftRightPlatform : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision) 
     {
-        //if it leaves the platform maek it normal. This will make it able to leave the platform
+        //if it leaves the platform make it normal. This will make it able to leave the platform
         if (collision.gameObject.tag == "Player")
         {
             Player.transform.parent = null;
